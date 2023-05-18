@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
+    const handleLogIn = event => {
+        event.preventDefault();
+    }
     return (
         <div>
              <div className="hero min-h-screen bg-base-200">
@@ -12,7 +15,7 @@ const Login = () => {
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
                         <h1 className="text-3xl text-center font-bold">Login </h1>
-                        <form >
+                        <form onSubmit={handleLogIn}>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
