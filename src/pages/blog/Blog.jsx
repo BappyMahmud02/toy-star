@@ -10,19 +10,16 @@ const Blog = () => {
                 <p className='text-2xl my-4'>Ans: Refresh tokens allow you to balance your users' access needs with your organization's security practices. Access tokens help users get the resources they need to complete their tasks, but such tokens can also expose your organization to data compromise or other malicious actions if a hacker is able to steal them. 
                 In general, a token is an object that represents something else, such as another object (either physical or virtual), or an abstract concept as, for example, a gift is sometimes referred to as a token of the giver's esteem for the recipient. In computers, there are a number of types of tokens.</p>
 
-                <h3 className='text-3xl font-bold mt-8'>2. How to validate React props using PropTypes ?</h3>
-                <p className='text-2xl my-4'>Ans: To check if a prop was passed to a component in React:
-                    1. Compare the prop to undefined .
-                    2. If the prop is equal to undefined , it wasn't     passed to the component.
-                    3. Otherwise, it was passed..</p>
+                <h3 className='text-3xl font-bold mt-8'>2. Compare SQL and NoSQL databases ?</h3>
+                <p className='text-2xl my-4'>Ans: SQL databases are vertically scalable, while NoSQL databases are horizontally scalable. SQL databases are table-based, while NoSQL databases are document, key-value, graph, or wide-column stores. SQL databases are better for multi-row transactions, while NoSQL is better for unstructured data like documents or JSON.</p>
 
-                <h3 className='text-3xl font-bold mt-8'>3. the difference between nodejs and express js. ?</h3>
-                <p className='text-2xl my-4'>Express is a minimal and flexible node. js web application framework, providing a robust set of features for building single and multi-page, and hybrid web applications. On the other hand, Node. js is detailed as "A platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications".</p>
+                <h3 className='text-3xl font-bold mt-8'>3. What is express js? What is Nest JS ?</h3>
+                <p className='text-2xl my-4'>NestJS is a framework for developing modern server-side applications in Node. js. It is built on top of Express, a popular server framework for Node. js, and provides a robust set of features for building efficient, scalable, and enterprise-grade applications.</p>
 
-                <h3 className='text-3xl font-bold mt-8'>4. What is a custom hook, and why will you create a custom hook?
+                <h3 className='text-3xl font-bold mt-8'>4. What is MongoDB aggregate and how does it work ?
 
-                    ?</h3>
-                <p className='text-2xl my-4'>Ans: Custom React JS hooks are reusable functions that a React JS software developer can use to add special and unique functionality to the React applications. Usually, if there is a requirement to add a feature, one can install a third-party library and solve the problem . </p>
+                    </h3>
+                <p className='text-2xl my-4'>Ans: Aggregation is a way of processing a large number of documents in a collection by means of passing them through different stages. The stages make up what is known as a pipeline. The stages in a pipeline can filter, sort, group, reshape and modify documents that pass through the pipeline. </p>
             </div>
         </div>
     );
