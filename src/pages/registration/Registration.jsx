@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/Authprovider';
+import { getAuth, updateProfile } from 'firebase/auth';
+import app from '../../firebase/Firebase.config';
 
 const Registration = () => {
-
+    const auth = getAuth(app);
     const {user,createUser, logOut} = useContext(AuthContext)
      
     const navigate = useNavigate()

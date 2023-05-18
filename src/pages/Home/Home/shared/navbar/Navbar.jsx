@@ -26,9 +26,9 @@ const Navbar = () => {
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><Link to='/' className='text-green-700 font-bold '>Home</Link></li>
                             <li tabIndex={0}>
-                                <Link className='text-cyan-500 font-bold'>All Toys</Link>
+                                <Link to='/alltoy' className='text-cyan-500 font-bold'>All Toys</Link>
                             </li>
-                            <li><Link className='text-violet-500 font-bold'>My Toy</Link></li>
+                            <li><Link to='/mytoy' className='text-violet-500 font-bold'>My Toy</Link></li>
                             <li><Link to='addtoy' className='text-pink-300 font-bold'>Add Toy</Link></li>
                             <li><Link to='/blog' className='text-yellow-500 font-bold'>Blog</Link></li>
                         </ul>
@@ -40,9 +40,9 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1">
                         <li><Link to='/' className='text-green-700 font-bold text-2xl'>Home</Link></li>
                         <li tabIndex={0}>
-                            <Link className='text-cyan-500 font-bold text-2xl'>All Toys</Link>
+                            <Link to='/alltoy' className='text-cyan-500 font-bold text-2xl'>All Toys</Link>
                         </li>
-                        <li><Link className='text-violet-500 font-bold text-2xl'>My Toy</Link></li>
+                        <li><Link to='/mytoy' className='text-violet-500 font-bold text-2xl'>My Toy</Link></li>
                         <li><Link to='addtoy' className='text-pink-300 font-bold text-2xl'>Add Toy</Link></li>
                         <li><Link to='/blog' className='text-yellow-500 font-bold text-2xl'>Blog</Link></li>
                     </ul>

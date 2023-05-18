@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/Authprovider';
 
 const Login = () => {
@@ -7,7 +7,7 @@ const Login = () => {
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || "/";
 
-   const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+   const { signIn, signInWithGoogle,} = useContext(AuthContext);
 
     const handleLogIn = event => {
         event.preventDefault();
@@ -37,18 +37,7 @@ const Login = () => {
                 console.log(error);
             })
     }
-    const handleGithubSignIn = () => {
-        
-        signInWithGithub()
-            .then(result => {
-                const loggedUser = result.user;
-                console.log(loggedUser);
-                navigate(from, { replace: true });
-            })
-            .catch(error => {
-                console.log(error);
-            })
-    }
+   
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
@@ -79,8 +68,8 @@ const Login = () => {
                                     <input className="btn btn-warning" type="submit" value="Login" />
                                 </div>
                                 <div className=' flex justify-around items-center mt-4'>
-                                    <button onClick={handleGoogleSignIn} className="btn btn-primary"> Google</button>
-                                    <button onClick={handleGithubSignIn} className="btn btn-primary"> Github</button>
+                                    <button onClick={handleGoogleSignIn} className="btn btn-block btn-warning"> Google</button>
+                                    
 
                                 </div>
                             </form>

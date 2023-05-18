@@ -6,6 +6,8 @@ import Login from "../pages/login/Login";
 import Registration from "../pages/registration/Registration";
 import Addtoy from "../pages/addtoy/Addtoy";
 import Gallery from "../pages/Home/gallery/Gallery";
+import Mytoy from "../pages/mytoy/Mytoy";
+import Alltoy from "../pages/alltoy/Alltoy";
 
 const router = createBrowserRouter([
     {
@@ -35,7 +37,18 @@ const router = createBrowserRouter([
         {
             path:'gallery',
             element:<Gallery></Gallery>
+        },
+        {
+            path:'mytoy',
+            element: <Mytoy></Mytoy>,
+            
+        },
+        {
+            path:'alltoy',
+            element:<Alltoy></Alltoy>,
+            loader: fetch('http://localhost:5000/toys')
         }
+
       ]
     },
   ]);
