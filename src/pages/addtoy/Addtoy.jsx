@@ -1,10 +1,43 @@
 import React from 'react';
 
 const Addtoy = () => {
+
+    const handleAddToy = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const sellerName = form.sellerName.value;
+        const sellerEmail = form.sellerEmail.value;
+        const price = form.price.value;
+        const rating = form.rating.value;
+        const quantity = form.quantity.value;
+        const category = form.category.value;
+
+        const information = { name, photo, price, sellerName, rating, quantity, category, sellerEmail };
+        console.log(information);
+
+      
+
+        fetch('http://localhost:5000/alltoys', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(information)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
+    }
+
+
+
     return (
         <div className="card-body">
             <h2 className='text-center text-3xl font-bold'>Add Toys : </h2>
-            <form >
+            <form onSubmit={handleAddToy}>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                     <div className="form-control">
                         <label className="label">
@@ -33,13 +66,13 @@ const Addtoy = () => {
                         <input type="text" name='sellerEmail' placeholder="sellerEmail" className="input input-bordered" />
                     </div>
                     <div className='form-control'>
-                        <label for="subcategory">Subcategory:</label>
-                        <select name="subcategory">
-                            <option value="">Select subcategory</option>
-                            <option value="subcategory1">Subcategory 1</option>
-                            <option value="subcategory2">Subcategory 2</option>
-                            <option value="subcategory3">Subcategory 3</option>
-
+                        <select name="category" className="select select-bordered w-full max-w-xs">
+                            <label className="label">
+                                <option disabled selected>Sub Category</option>
+                            </label>
+                            <option>car</option>
+                            <option>truck</option>
+                            <option>jeep</option>
                         </select>
                     </div>
                     <div className="form-control">
@@ -53,7 +86,7 @@ const Addtoy = () => {
                         <label className="label">
                             <span className="label-text">Rating</span>
                         </label>
-                        <input type="text" name='raating' placeholder="Rating" className="input input-bordered" />
+                        <input type="text" name='rating' placeholder="Rating" className="input input-bordered" />
 
                     </div>
                     <div className="form-control">
@@ -63,7 +96,7 @@ const Addtoy = () => {
                         <input type="number" name='quantity' placeholder="Available Quantity" className="input input-bordered" />
 
                     </div>
-                    
+
 
 
                 </div>
