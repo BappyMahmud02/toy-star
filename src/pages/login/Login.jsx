@@ -3,8 +3,12 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/Authprovider';
 
 const Login = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || "/";
 
-    const { signIn } = useContext(AuthContext)
+   const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+
     const handleLogIn = event => {
         event.preventDefault();
         const form = event.target;
@@ -16,8 +20,34 @@ const Login = () => {
             .then(result => {
                 const user = result.user
                 console.log(user);
+
             })
             .catch(error => console.log(error))
+    }
+
+    const handleGoogleSignIn = () => {
+        
+        signInWithGoogle()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate(from, { replace: true });
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+    const handleGithubSignIn = () => {
+        
+        signInWithGithub()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate(from, { replace: true });
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
     return (
         <div>
@@ -48,8 +78,13 @@ const Login = () => {
                                 <div className="form-control mt-6">
                                     <input className="btn btn-warning" type="submit" value="Login" />
                                 </div>
+                                <div className=' flex justify-around items-center mt-4'>
+                                    <button onClick={handleGoogleSignIn} className="btn btn-primary"> Google</button>
+                                    <button onClick={handleGithubSignIn} className="btn btn-primary"> Github</button>
+
+                                </div>
                             </form>
-                            <p className='my-4 text-center'>New to Car Doctors ?<Link className='text-yellow-500 font-bold' to='/registration' >Registration</Link> </p>
+                            <p className='my-4 text-center'>New to kids playZone ?<Link className='text-yellow-500 font-bold' to='/registration' >Registration</Link> </p>
                         </div>
 
                     </div>

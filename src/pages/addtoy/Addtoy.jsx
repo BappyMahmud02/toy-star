@@ -1,4 +1,5 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 
 const Addtoy = () => {
 
@@ -29,6 +30,13 @@ const Addtoy = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            Swal.fire({
+                position: 'top-center',
+                icon: 'success',
+                title: 'Your toys has been saved',
+                showConfirmButton: false,
+                timer: 1500
+              })
         })
     }
 

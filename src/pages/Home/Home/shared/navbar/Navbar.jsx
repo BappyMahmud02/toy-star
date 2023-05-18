@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../../../assets/logo.main.png'
+import { AuthContext } from '../../../../../providers/Authprovider';
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -36,8 +48,23 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-6">
-                    <Link to='login'><button className="btn btn-outline btn-warning font-bold">Log In</button></Link>
-                    <Link to='registration'><button className="btn btn-outline btn-warning font-bold">Registration</button></Link>
+                    {
+                        user ?
+                        <> <span><button onClick={handleLogOut} className="btn btn-success ms-4">Log out</button>
+                        </span> </> :
+                           <> <Link to='login'><button className="btn btn-outline btn-warning font-bold">Log In</button></Link>
+                            <Link to='registration'><button className="btn btn-outline btn-warning font-bold">Registration</button></Link>
+                        </>
+                    }
+                    {
+                        user &&
+                        <>
+                            <div className="tooltip tooltip-left"
+                                data-tip={user?.displayName}>
+                                <img className='h-[40px] w-[40px] rounded-full' src={user?.photoURL} alt="" />
+                            </div>
+                        </>
+                    }
                 </div>
             </div>
         </div>
