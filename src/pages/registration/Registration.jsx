@@ -1,16 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Registration = () => {
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row">
                 <div className="w-1/2 m-12">
-                    <img src={img} alt="" />
+                    <img src='' alt="" />
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
-                        <h1 className="text-3xl text-center font-bold">Sign Up </h1>
-                        <form onSubmit={handleSignUp}>
+                        <h1 className="text-3xl text-center font-bold">registration </h1>
+                        <form >
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>

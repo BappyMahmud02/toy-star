@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
@@ -6,12 +7,12 @@ const Login = () => {
              <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row">
                 <div className="w-1/2 m-12">
-                    <img src={img} alt="" />
+                    <img src='' alt="" />
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
                         <h1 className="text-3xl text-center font-bold">Login </h1>
-                        <form onSubmit={handleLogIn}>
+                        <form >
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -31,7 +32,7 @@ const Login = () => {
                                 <input className="btn btn-warning" type="submit" value="Login" />
                             </div>
                         </form>
-                        <p className='my-4 text-center'>New to Car Doctors <Link className='text-yellow-500 font-bold' to='/signup' >Sign Up</Link> </p>
+                        <p className='my-4 text-center'>New to Car Doctors ?<Link className='text-yellow-500 font-bold' to='/registration' >Registration</Link> </p>
                     </div>
 
                 </div>

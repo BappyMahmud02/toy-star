@@ -17,7 +17,7 @@ const Navbar = () => {
                                 <Link className='text-cyan-500 font-extrabold'>All Toys</Link>
                             </li>
                             <li><Link className='text-violet-500 font-extrabold'>My Toy</Link></li>
-                            <li><Link className='text-pink-300 font-extrabold'>Add Button</Link></li>
+                            <li><Link to='addtoy' className='text-pink-300 font-extrabold'>Add Toy</Link></li>
                             <li><Link to='/blog' className='text-yellow-500 font-extraabold'>Blog</Link></li>
                         </ul>
                     </div>
@@ -31,13 +31,13 @@ const Navbar = () => {
                             <Link className='text-cyan-500 font-extrabold'>All Toys</Link>
                         </li>
                         <li><Link className='text-violet-500 font-extrabold'>My Toy</Link></li>
-                        <li><Link className='text-pink-300 font-extrabold'>Add Button</Link></li>
+                        <li><Link to='addtoy' className='text-pink-300 font-extrabold'>Add Toy</Link></li>
                         <li><Link to='/blog' className='text-yellow-500 font-extrabold'>Blog</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end gap-6">
-                    <button className="btn btn-outline btn-warning font-bold">Log In</button>
-                    <button className="btn btn-outline btn-warning font-bold">Registration</button>
+                    <Link to='login'><button className="btn btn-outline btn-warning font-bold">Log In</button></Link>
+                    <Link to='registration'><button className="btn btn-outline btn-warning font-bold">Registration</button></Link>
                 </div>
             </div>
         </div>
