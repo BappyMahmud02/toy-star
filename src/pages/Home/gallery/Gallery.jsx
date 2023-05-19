@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo1 from '../../../assets/picture.1.webp'
 import logo2 from '../../../assets/picture.2.webp'
 import logo3 from '../../../assets/picture.3.png'
 import logo4 from '../../../assets/picture.4.png'
 import logo5 from '../../../assets/picture.5.webp'
 import logo6 from '../../../assets/picture-6.png'
+import Aos from 'aos';
+import 'aos/dist/aos.css'
+
 
 const Gallery = () => {
+
+    useEffect(() => {
+        Aos.init();
+    },[])
     return (
         <>
         <div>
@@ -14,7 +21,7 @@ const Gallery = () => {
             <h2 className='font-bold mt-4 text-center text-2xl text-amber-400'>our kids will be very happy</h2>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-6  my-12'>
-            <div className="card w-96 bg-base-100 shadow-xl border border-yellow-400">
+            <div className="card w-96 bg-base-100 shadow-xl border border-yellow-400" data-aos="fade-right">
                 <figure className="px-10 pt-10">
                     <img src={logo1}alt="Shoes" className="rounded-xl" />
                 </figure>
@@ -25,7 +32,7 @@ const Gallery = () => {
 
                 </div>
             </div>
-            <div className="card w-96 bg-base-100 shadow-xl border border-yellow-400">
+            <div className="card w-96 bg-base-100 shadow-xl border border-yellow-400" data-aos="fade-right">
                 <figure className="px-10 pt-10">
                     <img src={logo2}alt="Shoes" className="rounded-xl" />
                 </figure>
@@ -35,7 +42,7 @@ const Gallery = () => {
                     <button className="btn btn-outline  btn-warning">Product Details</button>
                 </div>
             </div>
-            <div className="card w-96 bg-base-100 shadow-xl border border-yellow-400">
+            <div className="card w-96 bg-base-100 shadow-xl border border-yellow-400" data-aos="fade-left">
                 <figure className="px-10 pt-10">
                     <img src={logo3}alt="Shoes" className="rounded-xl" />
                 </figure>
@@ -45,7 +52,7 @@ const Gallery = () => {
                     <button className="btn btn-outline  btn-warning">Product Details</button>
                 </div>
             </div>
-            <div className="card w-96 bg-base-100 shadow-xl border border-yellow-400">
+            <div className="card w-96 bg-base-100 shadow-xl border border-yellow-400" data-aos="fade-right">
                 <figure className="px-10 pt-10">
                     <img src={logo4}alt="Shoes" className="rounded-xl" />
                 </figure>
@@ -55,7 +62,7 @@ const Gallery = () => {
                     <button className="btn btn-outline  btn-warning">Product Details</button>
                 </div>
             </div>
-            <div className="card w-96 bg-base-100 shadow-xl border border-yellow-400">
+            <div className="card w-96 bg-base-100 shadow-xl border border-yellow-400" data-aos="fade-right">
                 <figure className="px-10 pt-10">
                     <img src={logo5}alt="Shoes" className="rounded-xl" />
                 </figure>
@@ -65,7 +72,7 @@ const Gallery = () => {
                     <button className="btn btn-outline  btn-warning">Product Details</button>
                 </div>
             </div>
-            <div className="card w-96 bg-base-100 shadow-xl border border-yellow-400">
+            <div className="card w-96 bg-base-100 shadow-xl border border-yellow-400" data-aos="fade-left">
                 <figure className="px-10 pt-10">
                     <img src={logo6}alt="Shoes" className="rounded-xl" />
                 </figure>
