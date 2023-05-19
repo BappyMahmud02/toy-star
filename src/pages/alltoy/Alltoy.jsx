@@ -20,24 +20,24 @@ const Alltoy = () => {
                     <thead>
                         <tr>
                             <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
+                               
                             </th>
                             <th>Seller Name</th>
                             <th>Toy Name</th>
                             <th>Sub-category</th>
                             <th>Price</th>
-                            <th>Available Quantity</th>
+                            <th>Quantity</th>
                             <th>Details</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            allToys.map(alltoy => <Alltoyrow
+                            
+                            allToys.slice(0,20).map(alltoy => <Alltoyrow
                                 key={allToys._id}
-                                alltoy={alltoy}
-                            ></Alltoyrow>)
+                               alltoy={alltoy}
+                             ></Alltoyrow>)
+                            
                         }
 
                     </tbody>

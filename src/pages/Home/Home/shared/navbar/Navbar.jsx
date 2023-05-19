@@ -28,12 +28,18 @@ const Navbar = () => {
                             <li tabIndex={0}>
                                 <Link to='/alltoy' className='text-cyan-500 font-bold'>All Toys</Link>
                             </li>
-                            <li><Link to='/mytoy' className='text-violet-500 font-bold'>My Toy</Link></li>
-                            <li><Link to='addtoy' className='text-pink-300 font-bold'>Add Toy</Link></li>
+                            {
+                                user?.email ?
+                                    <>
+                                        <li><Link to='/mytoy' className='text-violet-500 font-bold'>My Toy</Link></li>
+                                        <li><Link to='addtoy' className='text-pink-300 font-bold'>Add Toy</Link></li>
+                                    </> : " "
+
+                            }
                             <li><Link to='/blog' className='text-yellow-500 font-bold'>Blog</Link></li>
                         </ul>
                     </div>
-                   
+
                     <Link to='/' className="btn btn-ghost normal-case text-xl h-44 w-44"> <img src={logo} alt="" /> </Link>
                     <Link to='/' className='font-extrabold text-4xl text-amber-400'>Toy Stars</Link>
                 </div>
@@ -43,21 +49,21 @@ const Navbar = () => {
                         <li tabIndex={0}>
                             <Link to='/alltoy' className='text-cyan-500 font-bold text-2xl'>All Toys</Link>
                         </li>
-                        
+
                         <li><Link to='/blog' className='text-yellow-500 font-bold text-2xl'>Blog</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end gap-6">
                     {
                         user?.email ?
-                        <> 
-                        <Link to='/mytoy' className='text-violet-500 font-bold text-2xl'>My Toy</Link>
-                        <Link to='addtoy' className='text-pink-300 font-bold text-2xl'>Add Toy</Link>
-                        <span><button onClick={handleLogOut} className="btn btn-success ms-4">Log out</button>
-                        </span> </> :
-                           <> <Link to='login'><button className="btn btn-outline btn-warning font-bold">Log In</button></Link>
-                            <Link to='registration'><button className="btn btn-outline btn-warning font-bold">Registration</button></Link>
-                        </>
+                            <>
+                                <Link to='/mytoy' className='text-violet-500 font-bold text-2xl'>My Toy</Link>
+                                <Link to='addtoy' className='text-pink-300 font-bold text-2xl'>Add Toy</Link>
+                                <span><button onClick={handleLogOut} className="btn btn-success ms-4">Log out</button>
+                                </span> </> :
+                            <> <Link to='login'><button className="btn btn-outline btn-warning font-bold">Log In</button></Link>
+                                <Link to='registration'><button className="btn btn-outline btn-warning font-bold">Registration</button></Link>
+                            </>
                     }
                     {
                         user &&
