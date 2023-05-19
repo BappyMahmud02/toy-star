@@ -59,7 +59,7 @@ const Navbar = () => {
                             <>
                                 <Link to='/mytoy' className='text-violet-500 font-bold text-2xl'>My Toy</Link>
                                 <Link to='addtoy' className='text-pink-300 font-bold text-2xl'>Add Toy</Link>
-                                <span><button onClick={handleLogOut} className="btn btn-success ms-4">Log out</button>
+                                <span><button onClick={handleLogOut} className="btn btn-warning ms-4">Log out</button>
                                 </span> </> :
                             <> <Link to='login'><button className="btn btn-outline btn-warning font-bold">Log In</button></Link>
                                 <Link to='registration'><button className="btn btn-outline btn-warning font-bold">Registration</button></Link>
