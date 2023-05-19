@@ -8,6 +8,7 @@ import Addtoy from "../pages/addtoy/Addtoy";
 import Gallery from "../pages/Home/gallery/Gallery";
 import Mytoy from "../pages/mytoy/Mytoy";
 import Alltoy from "../pages/alltoy/Alltoy";
+import Privateroute from "./Privateroute";
 
 const router = createBrowserRouter([
     {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
         },
         {
             path:'addtoy',
-            element:<Addtoy></Addtoy>
+            element:<Privateroute><Addtoy></Addtoy></Privateroute>
         },
         {
             path:'gallery',
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
         },
         {
             path:'mytoy',
-            element: <Mytoy></Mytoy>,
+            element: <Privateroute><Mytoy></Mytoy></Privateroute>,
             
         },
         {
