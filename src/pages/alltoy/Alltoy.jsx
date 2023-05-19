@@ -6,15 +6,13 @@ const Alltoy = () => {
     const [allToys, setallToys] = useState([])
     const [searchText, setSearchText] = useState()
     useEffect(() => {
-        fetch('http://localhost:5000/toys')
+        fetch('http://localhost:5000/alltoys')
             .then(res => res.json())
             .then(data => setallToys(data))
     }, [])
 
-
-    // useEffect(() => {
-       
-    // },[])
+    
+    
     const handleSearch = () => {
         fetch(`http://localhost:5000/toysearchByTitle/${searchText}`)
         .then(res => res.json())
@@ -45,6 +43,7 @@ const Alltoy = () => {
 
                             </th>
 
+                            
                             <th className='text-xl text-purple-600 font-extrabold'>Seller Name</th>
                             <th className='text-xl text-purple-600 font-extrabold'>Toy Name</th>
                             <th className='text-xl text-purple-600 font-extrabold'>Sub-category</th>
