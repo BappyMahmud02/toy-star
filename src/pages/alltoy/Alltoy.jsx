@@ -4,40 +4,64 @@ import Alltoyrow from './Alltoyrow';
 
 const Alltoy = () => {
     const [allToys, setallToys] = useState([])
+    const [searchText, setSearchText] = useState()
     useEffect(() => {
         fetch('http://localhost:5000/toys')
             .then(res => res.json())
             .then(data => setallToys(data))
     }, [])
 
+
+    // useEffect(() => {
+       
+    // },[])
+    const handleSearch = () => {
+        fetch(`http://localhost:5000/toysearchByTitle/${searchText}`)
+        .then(res => res.json())
+        .then(data => {
+            setallToys(data);
+        })
+    }
     return (
         <div >
             <h2>toys: {allToys.length}</h2>
-           
+
+            <div className='text-center mb-6'>
+                <input
+                    onChange={(e) => setSearchText(e.target.value)}
+                    type='text'
+                    placeholder="Type here"
+                    className="input input-bordered w-full max-w-xs"
+                /> {" "}
+                <button onClick={handleSearch} className="btn btn-outline btn-warning">Search</button>
+            </div>
+
             <div className="overflow-x-auto w-full">
-                <table className="table w-full">
+                <table className="table w-full ">
                     {/* head */}
                     <thead>
                         <tr>
                             <th>
-                               
+
                             </th>
-                            <th>Seller Name</th>
-                            <th>Toy Name</th>
-                            <th>Sub-category</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Details</th>
+
+                            <th className='text-xl text-purple-600 font-extrabold'>Seller Name</th>
+                            <th className='text-xl text-purple-600 font-extrabold'>Toy Name</th>
+                            <th className='text-xl text-purple-600 font-extrabold'>Sub-category</th>
+                            <th className='text-xl text-purple-600 font-extrabold'>Price</th>
+                            <th className='text-xl text-purple-600 font-extrabold'>Quantity</th>
+                            <th className='text-xl text-purple-600 font-extrabold'>Details</th>
+
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            
-                            allToys.slice(0,20).map(alltoy => <Alltoyrow
+
+                            allToys.slice(0, 20).map(alltoy => <Alltoyrow
                                 key={allToys._id}
-                               alltoy={alltoy}
-                             ></Alltoyrow>)
-                            
+                                alltoy={alltoy}
+                            ></Alltoyrow>)
+
                         }
 
                     </tbody>

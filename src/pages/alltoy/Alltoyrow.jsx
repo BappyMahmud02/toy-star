@@ -26,7 +26,7 @@ const Alltoyrow = ({ alltoy }) => {
             <td>${price}</td>
             <td>{quantity}</td>
             <th>
-                <Link to={`/details/${_id}`}><button className="btn btn-ghost btn-xs">View details</button></Link>
+                <Link to={`/details/${_id}`}><button className="btn btn-warning btn-xs font-bold">View details</button></Link>
             </th>
         </tr>
     );

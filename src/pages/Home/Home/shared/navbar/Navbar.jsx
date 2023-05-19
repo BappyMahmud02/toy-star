@@ -53,7 +53,7 @@ const Navbar = () => {
                         <li><Link to='/blog' className='text-yellow-500 font-bold text-2xl'>Blog</Link></li>
                     </ul>
                 </div>
-                <div className="navbar-end gap-6">
+                <div className="navbar-end gap-6 ">
                     {
                         user?.email ?
                             <>
