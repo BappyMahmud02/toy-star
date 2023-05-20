@@ -5,7 +5,7 @@ import { AuthContext } from '../../providers/Authprovider';
 const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const from = location.state?.from?.pathname || "/";
+    const from = location.state?.from?.pathname || '/';
 
    const { signIn, signInWithGoogle,} = useContext(AuthContext);
 
@@ -20,6 +20,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user
                 console.log(user);
+                form.reset()
 
             })
             .catch(error => console.log(error))

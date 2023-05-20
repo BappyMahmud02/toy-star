@@ -29,7 +29,7 @@ const Footer = () => {
             <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
                 <div className="items-center h-72 w-72 grid-flow-col">
                     <Link to='/'><img  src={logo} alt="" /></Link>
-                    <p className='text-xl'>Toy Stars <br />Providing reliable tech since 1992</p>
+                    <p className='text-xl text-yellow-500 font-bold ms-4'>Toy Stars <br />Providing reliable tech since 1992</p>
                 </div>
                 <div className="md:place-self-center md:justify-self-end">
                     <div className="grid grid-flow-col gap-4">

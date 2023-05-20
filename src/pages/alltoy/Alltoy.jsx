@@ -22,7 +22,7 @@ const Alltoy = () => {
     }
     return (
         <div >
-            <h2>toys: {allToys.length}</h2>
+            <h2 className='text-3xl font-bold text-center mb-12'>All Toys Here</h2>
 
             <div className='text-center mb-6'>
                 <input

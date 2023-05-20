@@ -7,12 +7,13 @@ const Mytoy = () => {
     const { user } = useContext(AuthContext)
     const [addToy, setAddToy] = useState([])
 
-    const url = `http://localhost:5000/toy/${user?.email}`;
+  
+    const url = `http://localhost:5000/toy?sellerEmail=${user?.email}`;
     useEffect(() => {
         fetch(url)
-            .then(res => res.json())
-            .then(data => setAddToy(data))
-    }, [url]);
+        .then(res => res.json())
+        .then(data => setAddToy(data))
+    },[url])
 
     const handleDelete = id => {
         const proceed = confirm('You want to delete');
@@ -46,6 +47,7 @@ const Mytoy = () => {
             console.log(data);
             if(data.modifiedCount > 0){
                 // update state
+
                 const remaining = addToy.filter(toy => toy._id !==id);
                 const updated = addToy.find(toy => toy._id === id);
                 updated.status = 'confirm'
@@ -56,7 +58,7 @@ const Mytoy = () => {
     }
     return (
         <div>
-            <h2>your add toy: {addToy.length}</h2>
+            <h2 className='text-3xl font-bold text-center mb-12'>Your Toys Here</h2>
 
             <div className="overflow-x-auto w-full my-12">
                 <table className="table w-full">
