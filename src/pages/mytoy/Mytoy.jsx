@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/Authprovider';
 import Mytoyrow from './Mytoyrow';
+import Addtoy from '../addtoy/Addtoy';
 
 const Mytoy = () => {
     const { user } = useContext(AuthContext)
@@ -11,14 +12,14 @@ const Mytoy = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setAddToy(data))
-    }, []);
+    }, [url]);
 
     const handleDelete = id => {
         const proceed = confirm('You want to delete');
         if(proceed){
             fetch(`http://localhost:5000/toy/${id}`, {
                 method:'DELETE',
-                // headers:
+                
             })
             .then(res => res.json())
             .then(data => {
@@ -30,6 +31,28 @@ const Mytoy = () => {
                 }
             })
         }
+    }
+
+    const handleConfirm = id => {
+        fetch(`http://localhost:5000/toy/${id}`,{
+            method: 'PATCH',
+            headers: {
+                'content-type':'application/json'
+            },
+            body: JSON.stringify({status: 'confirm'})
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.modifiedCount > 0){
+                // update state
+                const remaining = addToy.filter(toy => toy._id !==id);
+                const updated = addToy.find(toy => toy._id === id);
+                updated.status = 'confirm'
+                const newAddToy = [updated, ...remaining];
+                setAddToy(newAddToy)
+            }
+        })
     }
     return (
         <div>
@@ -59,6 +82,7 @@ const Mytoy = () => {
                                 key={toy._id}
                                 toy={toy}
                                 handleDelete={handleDelete}
+                                handleConfirm={handleConfirm}
                             ></Mytoyrow>)
                         }
                     </tbody>

@@ -1,8 +1,8 @@
 import React from 'react';
 import Addtoy from '../addtoy/Addtoy';
 
-const Mytoyrow = ({ toy, handleDelete }) => {
-    const { _id, name, price, sellerName, rating, quantity, sellerEmail, category, photo } = toy;
+const Mytoyrow = ({ toy, handleDelete, handleConfirm }) => {
+    const { _id, name, price, sellerName, rating, quantity, sellerEmail, category, photo, status } = toy;
 
    
     return (
@@ -37,8 +37,13 @@ const Mytoyrow = ({ toy, handleDelete }) => {
             <td>${price}</td>
             <td>{quantity}</td>
             <th>
-                <button className="btn btn-warning btn-xs font-bold">Update</button>
+               
+               {
+                status === 'confirm' ? <span className='font-bold text-primary'>Updated</span> :
+                <button onClick={() => handleConfirm(_id)} className="btn btn-warning btn-xs font-bold">Update</button>
+               }
                 <button onClick={() => handleDelete(_id)} className="btn btn-warning btn-xs font-bold ms-4">Delete</button>
+               
             </th>
         </tr>
     );
